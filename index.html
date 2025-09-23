@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MTG Proxy Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>MTG Proxy Generator</h1>
+        <p>
+          Search for Magic: The Gathering cards and generate minimal printable
+          proxies
+        </p>
+      </header>
+
+      <div class="search-section">
+        <div class="search-form">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Enter card name (e.g., Lightning Bolt, Counterspell)"
+            class="search-input"
+          />
+          <button id="searchBtn" class="search-btn">Search</button>
+          <button id="listBtn" class="list-btn">Add List</button>
+          <button id="clearBtn" class="clear-btn">Clear All</button>
+        </div>
+      </div>
+
+      <div id="listModal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Add Card List</h2>
+            <button id="closeModal" class="close-btn">×</button>
+          </div>
+          <div class="modal-body">
+            <p>Enter card names, one per line:</p>
+            <textarea
+              id="cardListInput"
+              placeholder="Lightning Bolt&#10;Counterspell&#10;Sol Ring&#10;Path to Exile"
+              rows="15"
+              cols="50"
+            ></textarea>
+            <div class="modal-actions">
+              <button id="addListBtn" class="add-list-btn">Add Cards</button>
+              <button id="cancelListBtn" class="cancel-btn">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Searching cards...</p>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+
+      <div class="controls">
+        <button id="printBtn" class="print-btn">Print Proxies</button>
+        <span class="card-count">Cards: <span id="cardCount">0</span></span>
+      </div>
+
+      <div id="cardResults" class="card-grid"></div>
+    </div>
+    <footer>
+      <p>&copy; 2025 MTG Proxy Generator</p>
+      <p>Developed by L3gato</p>
+      <a href="https://paypal.me/L3gato" target="_blank">
+        <button>💖Buy me a coffee (or a card!)</button>
+      </a>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
