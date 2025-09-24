@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MTG Proxy Generator</title>
+    <title>MTG Proxy Generator | Create Printable Magic: The Gathering Proxies</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Generate printable MTG proxies quickly and easily. Search for Magic: The Gathering cards, add lists, and print high-quality minimal proxies for playtesting and casual games." />
+    <meta name="keywords" content="MTG proxy generator, Magic proxy, printable proxies, Magic: The Gathering, proxy cards, playtest cards, MTG tools" />
+    <meta name="author" content="L3gato" />
+
+    <!-- Open Graph (Facebook & social sharing) -->
+    <meta property="og:title" content="MTG Proxy Generator | Create Printable Magic: The Gathering Proxies" />
+    <meta property="og:description" content="Search Magic: The Gathering cards and generate printable proxies for playtesting and casual games." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com/" />
+    <meta property="og:image" content="https://yourwebsite.com/preview.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MTG Proxy Generator" />
+    <meta name="twitter:description" content="Easily generate and print Magic: The Gathering proxies for playtesting." />
+    <meta name="twitter:image" content="https://yourwebsite.com/preview.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -11,65 +33,70 @@
       <header class="header">
         <h1>MTG Proxy Generator</h1>
         <p>
-          Search for Magic: The Gathering cards and generate minimal printable
-          proxies
+          Generate <strong>printable Magic: The Gathering proxies</strong> for playtesting and casual games. 
+          Search for cards, create lists, and print minimal high-quality proxies.
         </p>
       </header>
 
-      <div class="search-section">
-        <div class="search-form">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Enter card name (e.g., Lightning Bolt, Counterspell)"
-            class="search-input"
-          />
-          <button id="searchBtn" class="search-btn">Search</button>
-          <button id="listBtn" class="list-btn">Add List</button>
-          <button id="clearBtn" class="clear-btn">Clear All</button>
-        </div>
-      </div>
-
-      <div id="listModal" class="modal hidden">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2>Add Card List</h2>
-            <button id="closeModal" class="close-btn">×</button>
+      <main>
+        <section class="search-section" aria-label="Card Search">
+          <h2>Search for MTG Cards</h2>
+          <div class="search-form">
+            <label for="searchInput" class="visually-hidden">Search Card</label>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Enter card name (e.g., Lightning Bolt, Counterspell)"
+              class="search-input"
+            />
+            <button id="searchBtn" class="search-btn">Search</button>
+            <button id="listBtn" class="list-btn">Add List</button>
+            <button id="clearBtn" class="clear-btn">Clear All</button>
           </div>
-          <div class="modal-body">
-            <p>Enter card names, one per line:</p>
-            <textarea
-              id="cardListInput"
-              placeholder="Lightning Bolt&#10;Counterspell&#10;Sol Ring&#10;Path to Exile"
-              rows="15"
-              cols="50"
-            ></textarea>
-            <div class="modal-actions">
-              <button id="addListBtn" class="add-list-btn">Add Cards</button>
-              <button id="cancelListBtn" class="cancel-btn">Cancel</button>
+        </section>
+
+        <section id="listModal" class="modal hidden" aria-label="Add Card List">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Add Card List</h2>
+              <button id="closeModal" class="close-btn" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+              <p>Enter card names, one per line:</p>
+              <textarea
+                id="cardListInput"
+                placeholder="Lightning Bolt&#10;Counterspell&#10;Sol Ring&#10;Path to Exile"
+                rows="15"
+                cols="50"
+              ></textarea>
+              <div class="modal-actions">
+                <button id="addListBtn" class="add-list-btn">Add Cards</button>
+                <button id="cancelListBtn" class="cancel-btn">Cancel</button>
+              </div>
             </div>
           </div>
+        </section>
+
+        <div id="loading" class="loading hidden" role="status">
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Searching cards...</p>
         </div>
-      </div>
-      <div id="loading" class="loading hidden">
-        <div class="spinner"></div>
-        <p>Searching cards...</p>
-      </div>
 
-      <div id="error" class="error hidden"></div>
+        <div id="error" class="error hidden" role="alert"></div>
 
-      <div class="controls">
-        <button id="printBtn" class="print-btn">Print Proxies</button>
-        <span class="card-count">Cards: <span id="cardCount">0</span></span>
-      </div>
+        <div class="controls">
+          <button id="printBtn" class="print-btn">Print Proxies</button>
+          <span class="card-count">Cards: <span id="cardCount">0</span></span>
+        </div>
 
-      <div id="cardResults" class="card-grid"></div>
+        <section id="cardResults" class="card-grid" aria-label="Card Results"></section>
+      </main>
     </div>
+
     <footer>
-      <p>&copy; 2025 MTG Proxy Generator</p>
-      <p>Developed by L3gato</p>
-      <a href="https://paypal.me/L3gato" target="_blank">
-        <button>💖Buy me a coffee (or a card!)</button>
+      <p>&copy; 2025 MTG Proxy Generator | Developed by L3gato</p>
+      <a href="https://paypal.me/L3gato" target="_blank" rel="noopener">
+        <button aria-label="Support the developer">💖 Buy me a coffee (or a card!)</button>
       </a>
     </footer>
 
