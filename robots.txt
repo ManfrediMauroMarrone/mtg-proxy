@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://minimal-mtg-proxy.netlify.app/sitemap.xml
